@@ -1,0 +1,84 @@
+<?php include("header.php");
+    if(isset($_GET['err'])) {
+        $err = $_GET['err'];
+    }
+    if(isset($_GET['msg'])) {
+        $msg = $_GET['msg'];
+    }
+?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-end">
+            <h1>ثبت نام</h1>
+            <?php if(isset($err)) : ?>
+                <div class="alert alert-danger">
+                    <h5><?php echo $err ?></h5>
+                </div>
+            <?php endif; ?>
+            <?php if(isset($msg)) : ?>
+                <div class="alert alert-success">
+                    <h5><?php echo $msg ?></h5>
+                </div>
+            <?php endif; ?>
+            <form method="POST" action="<?php echo htmlspecialchars("reg.php"); ?>" onsubmit="return valid()" enctype="multipart/form-data">
+                <div class="mb-3 text-end">
+                    <label for="userName" class="form-label">نام کاربری</label>
+                    <input name="username" type="text" pattern="[آ-ی0-9-][0-9a-zA-Z]{4,12}" class="form-control" id="userName" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3 text-end">
+                    <label for="email" class="form-label">رایانامه</label>
+                    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3 text-end">
+                    <label for="phoneNumber" class="form-label">شماره همراه</label>
+                    <input name="phoneNumber" type="text" pattern="[0-9]{11}" class="form-control" id="phoneNumber" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3 text-end">
+                    <label for="passWord" class="form-label">گذر واژه</label>
+                    <input name="password" pattern="[0-9a-zA-Z]{4,8}" type="password" class="form-control" id="passWord" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 text-end">
+                    <label for="userProfile" class="form-label">تصویر کاربری</label>
+                    <input name="userProfile" type="file" class="form-control" id="userProfile" aria-describedby="emailHelp">
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-success">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="deleteToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-body">
+            </div>
+        </div>
+        <div id="deleteToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-body">
+            </div>
+        </div>
+        <div id="deleteToast3" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-body">
+            </div>
+        </div>
+        <div id="deleteToast4" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-body">
+            </div>
+        </div>
+        <div id="deleteToast5" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-body">
+            </div>
+        </div>
+</div>
+<?php include("footer.php");  ?>

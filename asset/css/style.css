@@ -1,0 +1,32 @@
+
+.res img ,
+.res-single img,
+.res-cart img {
+    height: 40vh !important;
+    object-fit: contain !important;
+    width: 100% !important;
+}
+.card{
+    width: 20vw !important;
+    height: 83vh !important;
+}
+p{
+    font-size: 11px !important;
+}
+#btn-cart{
+    width : 124px !important;
+    height : 30px !important;
+}
+.card-cart {
+    width: 60vw !important;
+    height: 100% !important;
+}
+/* #btn-goshopping {
+    margin-top: 400px !important;
+}*/
+.face {
+    font-size: 10rem;
+}
+.navbar-brand {
+    padding-top: 0 !important;
+}
